@@ -1,0 +1,14 @@
+frontend/node_modules/
+frontend/package-lock.json
+
+backend/HELP.md
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+!backend/src/main/**/target/
+!backend/src/test/**/target/
+
+### IntelliJ IDEA ###
+backend/.idea
+
+### VS Code ###
+frontend/.vscode/
