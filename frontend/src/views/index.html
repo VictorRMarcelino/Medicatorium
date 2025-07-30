@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="red">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicatorium - Gerenciador de Medicamentos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles/main.css">
+    <link rel="stylesheet" href="../assets/styles/themes.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-pills"></i>
+                <h1>Medicatorium</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li class="active" data-section="dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Painel</span>
+                    </li>
+                    <li data-section="medications">
+                        <i class="fas fa-medkit"></i>
+                        <span>Medicamentos</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="theme-menu">
+                <button class="theme-btn">
+                    <i class="fas fa-palette"></i>
+                    <span>Tema</span>
+                </button>
+                <div class="theme-dropdown">
+                    <div class="theme-option" data-theme="red">
+                        <div class="theme-preview red-theme"></div>
+                        <span>Vermelho</span>
+                    </div>
+                    <div class="theme-option" data-theme="pink">
+                        <div class="theme-preview pink-theme"></div>
+                        <span>Rosa</span>
+                    </div>
+                    <div class="theme-option" data-theme="blue">
+                        <div class="theme-preview blue-theme"></div>
+                        <span>Azul</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h2 id="section-title">Dashboard</h2>
+                <div class="header-actions">
+                    <button class="btn-quick-action" id="add-medication">
+                        <i class="fas fa-plus"></i>
+                        Novo Medicamento
+                    </button>
+                </div>
+            </header>
+
+            <!-- Seção Dashboard -->
+            <section class="content-section active" id="dashboard-section">
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Medicamentos</h3>
+                            <p id="total-medications">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Próxima Dose</h3>
+                            <p id="next-medication-time">--:--</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="next-medication card">
+                        <div class="card-header">
+                            <h3>Próximo Medicamento</h3>
+                        </div>
+                        <div class="card-body" id="next-medication">
+                            <div class="empty-state">
+                                <i class="fas fa-pills"></i>
+                                <p>Nenhum medicamento agendado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Medicamentos -->
+            <section class="content-section" id="medications-section">
+                <div class="medication-list card">
+                    <div class="card-header">
+                        <h3>Lista de Medicamentos</h3>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Buscar medicamento..." id="medication-search">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-container" id="medications-list">
+                            <div class="empty-state">
+                                <i class="fas fa-box-open"></i>
+                                <p>Nenhum medicamento cadastrado</p>
+                                <button class="btn-primary" id="add-first-medication">
+                                    <i class="fas fa-plus"></i> Adicionar Medicamento
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal para Adicionar/Editar Medicamento -->
+    <div class="modal" id="medication-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Adicionar Medicamento</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="medication-form">
+                    <div class="form-group">
+                        <label for="med-name">Nome do Medicamento</label>
+                        <input type="text" id="med-name" required placeholder="Ex: Paracetamol">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="med-dose">Dose</label>
+                            <input type="number" id="med-dose" required placeholder="Ex: 500">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="med-unit">Unidade</label>
+                            <select id="med-unit" required>
+                                <option value="mg">mg</option>
+                                <option value="g">g</option>
+                                <option value="ml">ml</option>
+                                <option value="gotas">gotas</option>
+                                <option value="comprimidos">comprimidos</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="med-time">Horário</label>
+                        <input type="time" id="med-time" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="med-frequency">Frequência</label>
+                        <select id="med-frequency" required>
+                            <option value="diario">Diário</option>
+                            <option value="12h">A cada 12 horas</option>
+                            <option value="8h">A cada 8 horas</option>
+                            <option value="semanal">Semanal</option>
+                            <option value="quando-necessario">Quando necessário</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="med-notes">Observações</label>
+                        <textarea id="med-notes" placeholder="Ex: Tomar após as refeições"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="modal-cancel">Cancelar</button>
+                <button class="btn-primary" id="modal-confirm">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/themes.js"></script>
+</body>
+</html>
