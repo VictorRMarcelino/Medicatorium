@@ -1,0 +1,49 @@
+/* Tema Vermelho (Padrão) */
+:root, [data-theme="red"] {
+    --bg-color: #f8f9fa;
+    --content-bg: #ffffff;
+    --sidebar-bg: #2b2d42;
+    --sidebar-text: #edf2f4;
+    --sidebar-hover: rgba(237, 242, 244, 0.1);
+    --sidebar-border: #3a3e5b;
+    --card-bg: #ffffff;
+    --text-color: #2b2d42;
+    --secondary-text: #8d99ae;
+    --border-color: #e9ecef;
+    --input-bg: #ffffff;
+    --primary-color: #d90429;
+    --primary-hover: #ef233c;
+    --primary-rgb: 217, 4, 41;
+    --btn-secondary-bg: #e9ecef;
+    --btn-secondary-text: #495057;
+    --btn-secondary-hover: #dee2e6;
+}
+
+/* Tema Rosa */
+[data-theme="pink"] {
+    --primary-color: #ff006e;
+    --primary-hover: #ff5da2;
+    --primary-rgb: 255, 0, 110;
+    --sidebar-bg: #3a0ca3;
+}
+
+/* Tema Azul */
+[data-theme="blue"] {
+    --primary-color: #3a86ff;
+    --primary-hover: #4d94ff;
+    --primary-rgb: 58, 134, 255;
+    --sidebar-bg: #1a1a2e;
+}
+
+/* Classes para pré-visualização de temas */
+.red-theme {
+    background: linear-gradient(135deg, #2b2d42 50%, #d90429 50%);
+}
+
+.pink-theme {
+    background: linear-gradient(135deg, #3a0ca3 50%, #ff006e 50%);
+}
+
+.blue-theme {
+    background: linear-gradient(135deg, #1a1a2e 50%, #3a86ff 50%);
+}
