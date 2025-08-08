@@ -16,4 +16,5 @@ public class EntityUser {
     Long id;
     String cpf;
     String password;
+    String fullname;
 }

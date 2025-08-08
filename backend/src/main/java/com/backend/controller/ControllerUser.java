@@ -13,7 +13,6 @@ public class ControllerUser {
 
     @PostMapping("/user/store")
     public void storeUser(@RequestBody EntityUser user) {
-
         oServiceUser.store(user);
     }
 
