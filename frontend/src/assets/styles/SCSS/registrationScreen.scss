@@ -40,10 +40,13 @@ body {
 }
 
 .registration-input {
-    
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 10px 0px;
 }
 
 .registration-input input {
-    padding: 10px 45px;
+    padding: 15px 90px;
 }
 
