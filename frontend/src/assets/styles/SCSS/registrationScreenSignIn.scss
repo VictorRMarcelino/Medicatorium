@@ -9,9 +9,9 @@
 
 body {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    height: 100vh;
+    background-image:
 }
 
 .registration-table {
@@ -49,4 +49,3 @@ body {
 .registration-input input {
     padding: 15px 90px;
 }
-
