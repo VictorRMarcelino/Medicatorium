@@ -3,39 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/styles/CSS/registrationScreen.css">
+    <link rel="stylesheet" href="../assets/styles/CSS/registrationScreenSignIn.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <title>Medicatirium - Sign In</title>
-    <script src="registrationScreen.ts"></script>
+    <script src="../scripts/registrationScreenSignIn.ts"></script>
 </head>
 <body>
+<div class="form-registration">
     <div class="registration-table">
         <div class="registration-title">
-            <h1 class="title">Sign-In</h1>
+            <h1 class="title">Sign In</h1>
         </div>
 
         <div class="medicatorium-registration-input">
             <div class="registration-input">
                 <label for="text">Name</label>
-                <i class="fa-solid fa-circle-user"></i>
-                <input type="text" name="Fullname" id="input-fullname">
+                <div class="center-icon">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <input type="text" name="name" id="input-fullname">
+                </div>
             </div>
 
             <div class="registration-input">
                 <label for="text">E-mail</label>
-                <i class="fa-solid fa-envelope"></i>
-                <input type="email" name="E-mail" id="input-email">
+                <div class="center-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="e-mail" id="input-email">
+                </div>
             </div>
 
             <div class="registration-input">
                 <label for="text">Password</label>
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" name="Password" id="input-password">
+                <div class="center-icon">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" id="input-password">
+                </div>
             </div>
         </div>
 
         <div class="registration-button">
-            <button class="button-SignIn" id="button-SignIn">Sign In</button>
+            <button class="button" id="button">Sign In</button>
         </div>
-    </div>    
+    </div> 
+</div>       
 </body>
 </html>

@@ -1,0 +1,78 @@
+@import url("https://use.typekit.net/hss7heo.css");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #b30000;
+}
+
+.form-registration {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.registration-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  height: 100vh;
+  width: 30rem;
+}
+
+.medicatorium-registration-input {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.registration-input {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin: 10px auto;
+  position: relative;
+  width: 100%;
+}
+
+.center-icon {
+  display: flex;
+  align-items: center;
+}
+
+.registration-input input {
+  padding: 1rem 5rem;
+}
+
+.registration-input i {
+  color: #b30000;
+  position: absolute;
+  left: 1rem;
+  font-size: 1.5rem;
+  pointer-events: none;
+}
+
+.registration-button {
+  position: absolute;
+  bottom: 4rem;
+}
+
+.button {
+  border: 0px;
+  padding: 1rem 8.5rem;
+  background-color: #b30000;
+  color: white;
+  font-weight: bold;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 10px #b30000;
+}
+
+/*# sourceMappingURL=registrationScreenSignIn.css.map */

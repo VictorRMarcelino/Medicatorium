@@ -8,7 +8,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch src/scss:dist/css"
+    "sass": "sass --watch src/assets/styles/SCSS:src/assets/styles/CSS"
   },
   "dependencies": {
     "dotenv": "^17.2.1",
@@ -17,7 +17,7 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.1.0",
+    "sass": "^1.90.0",
     "typescript": "^5.8.3"
   }
 }
-
